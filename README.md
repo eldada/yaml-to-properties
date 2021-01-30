@@ -1,0 +1,70 @@
+# Yaml to Properties
+Convert a YAML formatted file to a flat properties file with a bash script and the [yq](https://github.com/mikefarah/yq) utility<br>
+**NOTES:**
+* You must have [yq](https://github.com/mikefarah/yq) **v4** installed!
+* You should provide a valid yaml formatted file
+
+## Usage
+```shell script
+# Get usage
+./yaml-to-properties.sh --help
+
+# Convert all elements in file
+./yaml-to-properties.sh --file ./examples/simple.yaml
+
+# Convert all elements under key "a"
+./yaml-to-properties.sh --file ./examples/arrays.yaml --key "a"
+```
+
+## Examples
+### Simple YAML
+For the [simple.yaml](examples/simple.yaml) file with the following
+```
+a:
+  key1: "value1"
+  key2: 2.6
+  ab:
+    key1: 6
+    key2: "h"
+
+```
+You get
+```shell script
+$ ./yaml-to-properties.sh --file ./examples/simple.yaml
+a.key1=value1
+a.key2=2.6
+a.ab.key1=6
+a.ab.key2=h
+
+```
+
+### Arrays YAML
+For the [arrays.yaml](examples/arrays.yaml) file with the following
+```
+a:
+  array:
+    - name: "element1"
+      value: "value1"
+    - name: "element2"
+      value: "value2"
+      sub-array:
+        - sub1: "x"
+        - sub2: "y"
+        - sub3: "z"
+
+```
+You get
+```shell script
+$ ./yaml-to-properties.sh --file ./examples/arrays.yaml
+a.array.0.name=element1
+a.array.0.value=value1
+a.array.1.name=element2
+a.array.1.value=value2
+a.array.1.sub-array.0.sub1=x
+a.array.1.sub-array.1.sub2=y
+a.array.1.sub-array.2.sub3=z
+
+```
+
+## Contribute
+Contributing is more than welcome with a pull request
