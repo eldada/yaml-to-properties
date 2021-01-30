@@ -1,7 +1,7 @@
 # Yaml to Properties
 Convert a YAML formatted file to a flat properties file with a bash script and the [yq](https://github.com/mikefarah/yq) utility<br>
 **NOTES:**
-* You must have [yq](https://github.com/mikefarah/yq) **v4** installed!
+* You must have [yq v4](https://github.com/mikefarah/yq/releases) installed!
 * You should provide a valid yaml formatted file
 
 ## Usage
