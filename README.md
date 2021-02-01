@@ -11,9 +11,6 @@ Convert a YAML formatted file to a flat properties file with a bash script and t
 
 # Convert all elements in file
 ./yaml-to-properties.sh --file ./examples/simple.yaml
-
-# Convert all elements under key "a"
-./yaml-to-properties.sh --file ./examples/arrays.yaml --key "a"
 ```
 
 ## Examples
