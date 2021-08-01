@@ -53,8 +53,16 @@ checkFileExists () {
     [ -f "${FILE}" ] || errorExit "File ${FILE} does not exist"
 }
 
+removeEmptyArrayAndMap () {
+    TMP_FILE=$(mktemp)
+    cp "$FILE" "$TMP_FILE"
+    sed -e 's,\[\],,g' -e 's,{},,g' "$FILE" > "$TMP_FILE"
+}
+
 processYaml () {
-    yq eval '.. | select((tag == "!!map" or tag == "!!seq") | not) | (path | join(".")) + "=" + .' "$FILE"
+    removeEmptyArrayAndMap
+    yq eval '.. | select((tag == "!!map" or tag == "!!seq") | not) | (path | join(".")) + "=" + .' "$TMP_FILE"
+    rm -f "$TMP_FILE"
 }
 
 main () {
