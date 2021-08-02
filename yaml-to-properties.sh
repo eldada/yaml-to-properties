@@ -61,7 +61,7 @@ removeEmptyArrayAndMap () {
 
 processYaml () {
     removeEmptyArrayAndMap
-    yq eval '.. | select((tag == "!!map" or tag == "!!seq") | not) | (path | join(".")) + "=" + .' "$TMP_FILE"
+    yq eval '.. | select((tag == "!!map" or tag == "!!seq") | not) | (path | join(".")) + "=" + .' "$TMP_FILE" || errorExit "yq failed"
     rm -f "$TMP_FILE"
 }
 
