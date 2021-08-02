@@ -56,7 +56,7 @@ checkFileExists () {
 removeEmptyArrayAndMap () {
     TMP_FILE=$(mktemp)
     cp "$FILE" "$TMP_FILE"
-    sed -e 's,\[\],,g' -e 's,{},,g' "$FILE" > "$TMP_FILE"
+    sed -e 's,\[[[:space:]]*\],,g' -e 's,{[[:space:]]*},,g' "$FILE" > "$TMP_FILE"
 }
 
 processYaml () {
