@@ -4,4 +4,5 @@ a:
   ab:
     key1: 6
     key2: "h"
-    key3:
+b:
+  emptyKey:

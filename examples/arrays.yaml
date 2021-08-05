@@ -8,3 +8,7 @@ a:
         - sub1: "x"
         - sub2: "y"
         - sub3: "z"
+b:
+  emptyArray: []
+c:
+  emptyMap: {}
