@@ -23,6 +23,8 @@ a:
   ab:
     key1: 6
     key2: "h"
+b:
+  emptyKey:
 
 ```
 You get
@@ -32,6 +34,7 @@ a.key1=value1
 a.key2=2.6
 a.ab.key1=6
 a.ab.key2=h
+b.emptyKey=
 
 ```
 
@@ -48,6 +51,10 @@ a:
         - sub1: "x"
         - sub2: "y"
         - sub3: "z"
+b:
+  emptyArray: []
+c:
+  emptyMap: {}
 
 ```
 You get
@@ -60,6 +67,8 @@ a.array.1.value=value2
 a.array.1.sub-array.0.sub1=x
 a.array.1.sub-array.1.sub2=y
 a.array.1.sub-array.2.sub3=z
+b.emptyArray=
+c.emptyMap=
 
 ```
 
