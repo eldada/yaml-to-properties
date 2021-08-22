@@ -1,5 +1,5 @@
 # NOTICE
-**As of `yq` version 4.12, there is a built in [Yaml to Properties](https://mikefarah.gitbook.io/yq/v/v4.x/usage/properties) support.**
+**As of `yq` version 4.12, there is a built in [Yaml to Properties](https://mikefarah.gitbook.io/yq/v/v4.x/usage/properties) support.**<br>
 It (almost) covers all capabilities of `yaml-to-properties.sh`.
 
 # Yaml to Properties
