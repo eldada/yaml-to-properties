@@ -1,3 +1,7 @@
+# NOTICE
+**As of `yq` version 4.12, there is a built in [Yaml to Properties](https://mikefarah.gitbook.io/yq/v/v4.x/usage/properties) support.**
+It (almost) covers all capabilities of `yaml-to-properties.sh`.
+
 # Yaml to Properties
 Convert a YAML formatted file to a flat properties file with a bash script and the [yq](https://github.com/mikefarah/yq) utility<br>
 **NOTES:**
