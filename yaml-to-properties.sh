@@ -27,7 +27,7 @@ END_USAGE
 }
 
 checkYq () {
-    [[ $(yq -V) =~ ' 4.' ]] || errorExit "Must have yq v4 installed (https://github.com/mikefarah/yq)"
+    [[ $(yq -V) =~ ( 4.|v4.) ]] || errorExit "Must have yq v4 installed (https://github.com/mikefarah/yq)"
 }
 
 processOptions () {
